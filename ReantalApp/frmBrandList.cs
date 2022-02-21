@@ -39,7 +39,9 @@ namespace ReantalApp
             }
             dr.Close();
             cn.Close();
-            //todo lblCount to display number of brands from datagridview!
+            //20.02. todo lblCount to display number of brands from datagridview!
+            //todo done 21.02.
+            lblCount.Text = dgvBrandList.Rows.Count.ToString() + "  RECORD/S";
         }
 
         private void btnClose_Click(object sender, EventArgs e)

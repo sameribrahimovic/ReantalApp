@@ -30,10 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.pnlLeftTop = new System.Windows.Forms.Panel();
-            this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.btnUser = new System.Windows.Forms.Button();
             this.btnBrand = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
@@ -42,17 +39,21 @@
             this.btnClient = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnRental = new System.Windows.Forms.Button();
+            this.pnlBottom = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.pnlLeftTop = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.pnlLeft.SuspendLayout();
-            this.pnlLeftTop.SuspendLayout();
-            this.pnlBottom.SuspendLayout();
             this.pnlLeftMenu.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
+            this.pnlLeftTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLeft
             // 
+            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(166)))), ((int)(((byte)(179)))));
             this.pnlLeft.Controls.Add(this.pnlLeftMenu);
             this.pnlLeft.Controls.Add(this.pnlBottom);
             this.pnlLeft.Controls.Add(this.pnlLeftTop);
@@ -61,24 +62,6 @@
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(200, 703);
             this.pnlLeft.TabIndex = 0;
-            // 
-            // pnlLeftTop
-            // 
-            this.pnlLeftTop.Controls.Add(this.pictureBox1);
-            this.pnlLeftTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLeftTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlLeftTop.Name = "pnlLeftTop";
-            this.pnlLeftTop.Size = new System.Drawing.Size(200, 186);
-            this.pnlLeftTop.TabIndex = 0;
-            // 
-            // pnlBottom
-            // 
-            this.pnlBottom.Controls.Add(this.btnLogout);
-            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 670);
-            this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(200, 33);
-            this.pnlBottom.TabIndex = 1;
             // 
             // pnlLeftMenu
             // 
@@ -95,14 +78,6 @@
             this.pnlLeftMenu.Name = "pnlLeftMenu";
             this.pnlLeftMenu.Size = new System.Drawing.Size(200, 484);
             this.pnlLeftMenu.TabIndex = 2;
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(200, 0);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1252, 703);
-            this.mainPanel.TabIndex = 1;
             // 
             // btnUser
             // 
@@ -209,6 +184,7 @@
             this.btnCar.Text = "    CAR";
             this.btnCar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCar.UseVisualStyleBackColor = false;
+            this.btnCar.Click += new System.EventHandler(this.btnCar_Click);
             // 
             // btnClient
             // 
@@ -273,6 +249,15 @@
             this.btnRental.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRental.UseVisualStyleBackColor = false;
             // 
+            // pnlBottom
+            // 
+            this.pnlBottom.Controls.Add(this.btnLogout);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 670);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(200, 33);
+            this.pnlBottom.TabIndex = 1;
+            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
@@ -294,6 +279,15 @@
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = false;
             // 
+            // pnlLeftTop
+            // 
+            this.pnlLeftTop.Controls.Add(this.pictureBox1);
+            this.pnlLeftTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLeftTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeftTop.Name = "pnlLeftTop";
+            this.pnlLeftTop.Size = new System.Drawing.Size(200, 186);
+            this.pnlLeftTop.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -307,6 +301,14 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(200, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1252, 703);
+            this.mainPanel.TabIndex = 1;
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,9 +321,9 @@
             this.Text = "Rental Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlLeft.ResumeLayout(false);
-            this.pnlLeftTop.ResumeLayout(false);
-            this.pnlBottom.ResumeLayout(false);
             this.pnlLeftMenu.ResumeLayout(false);
+            this.pnlBottom.ResumeLayout(false);
+            this.pnlLeftTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

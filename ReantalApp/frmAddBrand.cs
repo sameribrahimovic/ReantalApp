@@ -52,7 +52,7 @@ namespace ReantalApp
                     cm.Parameters.AddWithValue("@brand", txtBrand.Text);
                     cm.ExecuteNonQuery();
                     cn.Close();
-                    MessageBox.Show("Brend je uspesno sacuvan!");
+                    MessageBox.Show("Successfully Added!");
                     Clear();
                     frmblist.LoadData();
                 }
@@ -89,6 +89,13 @@ namespace ReantalApp
                 MessageBox.Show("ERROR ", ex.Message);
                 cn.Close();
             }
+        }
+
+
+        //Clear button
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }
