@@ -77,6 +77,7 @@
             this.btnUpdate.TabIndex = 74;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -96,7 +97,7 @@
             // 
             this.txtBrand.BackColor = System.Drawing.Color.White;
             this.txtBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtBrand.ForeColor = System.Drawing.Color.Black;
             this.txtBrand.Location = new System.Drawing.Point(87, 61);
             this.txtBrand.Name = "txtBrand";
             this.txtBrand.Size = new System.Drawing.Size(242, 20);

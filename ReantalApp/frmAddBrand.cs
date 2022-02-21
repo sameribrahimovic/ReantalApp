@@ -64,5 +64,31 @@ namespace ReantalApp
 
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure to Update this Record?", "Update Record", MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new MySqlCommand("UPDATE tblBrand SET brand = @brand WHERE brand = @b", cn);
+                    cm.Parameters.AddWithValue("@brand", txtBrand.Text);
+                    cm.Parameters.AddWithValue("@b", lblBrand.Text);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    MessageBox.Show("Car brand successfully Updated!");
+                    Clear();
+                    frmblist.LoadData();
+                    this.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR ", ex.Message);
+                cn.Close();
+            }
+        }
     }
 }

@@ -60,8 +60,8 @@ namespace ReantalApp
             if (colName == "colEdit")
             {
                 frmAddBrand frm = new frmAddBrand(this);
-                frm.lblBrand.Text = dgvBrandList[0, e.RowIndex].Value.ToString();
-                frm.txtBrand.Text = dgvBrandList[0, e.RowIndex].Value.ToString();
+                frm.lblBrand.Text = dgvBrandList[1, e.RowIndex].Value.ToString();
+                frm.txtBrand.Text = dgvBrandList[1, e.RowIndex].Value.ToString();
                 frm.btnSave.Enabled = false;
                 frm.btnUpdate.Enabled = true;
                 frm.ShowDialog();
@@ -72,10 +72,10 @@ namespace ReantalApp
                                    MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new MySqlCommand("DELETE FROM tblBrand WHERE brand = '" + dgvBrandList[0, e.RowIndex].Value.ToString() + "'", cn);
+                    cm = new MySqlCommand("DELETE FROM tblBrand WHERE brand = '" + dgvBrandList[1, e.RowIndex].Value.ToString() + "'", cn);
                     cm.ExecuteNonQuery();
                     cn.Close();
-                    MessageBox.Show("Brend je uspesno obrisan!", "Brisanje podatka", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Record successfully Deleted!", "Delete Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
                 }
             }
