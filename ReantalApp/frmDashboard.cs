@@ -34,5 +34,14 @@ namespace ReantalApp
             frm.BringToFront();
             frm.Show();
         }
+
+        private void btnClient_Click(object sender, EventArgs e)
+        {
+            frmClientList frm = new frmClientList();
+            frm.TopLevel = false;
+            mainPanel.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }

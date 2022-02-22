@@ -123,6 +123,18 @@
     <Compile Include="frmCarList.Designer.cs">
       <DependentUpon>frmCarList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddClient.Designer.cs">
+      <DependentUpon>frmAddClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientList.Designer.cs">
+      <DependentUpon>frmClientList.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCarList.resx">
       <DependentUpon>frmCarList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddClient.resx">
+      <DependentUpon>frmAddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientList.resx">
+      <DependentUpon>frmClientList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>

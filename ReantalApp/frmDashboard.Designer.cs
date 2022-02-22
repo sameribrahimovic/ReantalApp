@@ -206,6 +206,7 @@
             this.btnClient.Text = "    CLIENT";
             this.btnClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClient.UseVisualStyleBackColor = false;
+            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             // 
             // btnReturn
             // 
