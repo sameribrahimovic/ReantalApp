@@ -43,5 +43,14 @@ namespace ReantalApp
             frm.BringToFront();
             frm.Show();
         }
+
+        private void btnRental_Click(object sender, EventArgs e)
+        {
+            frmRental frm = new frmRental();
+            frm.TopLevel = false;
+            mainPanel.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }
