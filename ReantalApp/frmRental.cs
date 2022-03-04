@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -11,7 +12,6 @@ namespace ReantalApp
         MySqlConnection cn = new MySqlConnection();
         MySqlCommand cm = new MySqlCommand();
         MySqlDataReader dr;
-        DataSet ds;
         MySqlDataAdapter da;
         DbConnection dbcon = new DbConnection();
 
@@ -21,6 +21,24 @@ namespace ReantalApp
             InitializeComponent();
             cn = new MySqlConnection(dbcon.MyConnection());
             LoadAutoNo();
+        }
+
+        public void Reset()
+        {
+            txtCustomer.Clear();
+            txtCustomer.Focus();
+            txtTransNo.Clear();
+            txtName.Clear();
+            txtContact.Clear();
+            txtRemarks.Clear();
+
+            txtPlateNo.Clear();
+            txtPlate.Clear();
+            txtDetails.Clear();
+            txtRate.Clear();
+            dtReturn.Value = DateTime.Now;
+            txtTotal.Clear();
+
         }
         public void LoadClientData()
         {
@@ -115,7 +133,7 @@ namespace ReantalApp
                 txtPlateNo.AutoCompleteCustomSource = col;
                 txtPlateNo.AutoCompleteMode = AutoCompleteMode.Suggest;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 cn.Close();
             }
@@ -126,6 +144,7 @@ namespace ReantalApp
         {
             AutoSuggestClient();
             AutoSuggestCar();
+            //LoadCart();
         }
 
 
@@ -152,13 +171,28 @@ namespace ReantalApp
             //double NoOfDays = (d2 - d1).TotalDays;
             //lblDay.Text = NoOfDays.ToString("0");
 
-            DateTime d1 = DateTime.Now;
-            int total = Convert.ToInt32(txtRate.Text);
+            //this also works!
+            //DateTime d1 = DateTime.Now;
+            //int total = Convert.ToInt32(txtRate.Text);
 
-            int noOfDays = ((TimeSpan)(dtReturn.Value.Date - d1.Date)).Days;
-            lblDay.Text = noOfDays.ToString("0");
+            //int noOfDays = ((TimeSpan)(dtReturn.Value.Date - d1.Date)).Days;
+            //lblDay.Text = noOfDays.ToString("0");
 
-            txtTotal.Text = Convert.ToInt32(noOfDays * total).ToString();
+            //txtTotal.Text = Convert.ToInt32(noOfDays * total).ToString();
+
+
+            try
+            {
+                int day;
+                day = (int)DateAndTime.DateDiff("d", DateTime.Now.Date.ToString("MM-dd-yyyy"), dtReturn.Value.ToString("MM-dd-yyyy"));
+                day += 1;
+                lblDay.Text = day.ToString();
+                txtTotal.Text = Strings.Format((object)(day * Convert.ToDouble(txtRate.Text)), "#,##0.00");
+            }
+            catch (Exception)
+            {
+                txtTotal.Text = "0.00";
+            }
         }
 
         private void dtReturn_ValueChanged(object sender, EventArgs e)
@@ -166,9 +200,133 @@ namespace ReantalApp
             GetTotal();
         }
 
+        private void btnRent_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtID.Text == null)
+                    {
+                        return;
+                    }
+                    if (txtPlateNo.Text == null)
+                    {
+                        return;
+                    }
+                    string sdate1 = DateTime.Now.ToString("yyyy-MM-dd");
+                    string sdate2 = dtReturn.Value.ToString("yyyy-MM-dd");
+
+                    if (MessageBox.Show("Rent this Car?", "Rental information", MessageBoxButtons.YesNo,
+                                            MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        cn.Open();
+                        cm = new MySqlCommand("INSERT INTO tblrent (transno, cid, plateno, dborrowed, dreturned, rental, noofdays, rentalpay, remarks)" +
+                            "VALUES ('" + txtTransNo.Text + "','" + txtID.Text + "','" + txtPlate.Text + "','" + sdate1 + "','" + sdate2 + "','" + Convert.ToDouble(txtRate.Text) + "','" + lblDay.Text + "','" + Convert.ToDouble(txtTotal.Text) + "','" + txtRemarks.Text + "')", cn);
+                        cm.ExecuteNonQuery();
+
+                        MessageBox.Show("Car successfully Rented! Proceed to Payment.");
+                        cn.Close();
+                        LoadCart();
+
+                        cn.Open();  
+                        cm = new MySqlCommand("UPDATE tblcar SET status ='Borrowed' WHERE plate LIKE '" + txtPlate.Text + "'", cn);
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+
+                        txtPlateNo.Clear();
+                        txtDetails.Clear();
+                        txtRate.Text = "0.00";
+                        dtReturn.Value = DateTime.Now;
+                        AutoSuggestCar();
+                    }
+            }
+            catch (Exception)
+                {
+                    cn.Close();
+                }
+        }
+
+        private void dgvRent_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvRent.Columns[e.ColumnIndex].Name;
+            if (colName == "colDelete")
+            {
+                if (MessageBox.Show("Delete from list?", "Delete", MessageBoxButtons.YesNo,
+                                   MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new MySqlCommand("DELETE FROM tblrent WHERE id LIKE '" + _id + "'", cn);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    Reset();
+
+                    cn.Open();
+                    cm = new MySqlCommand("UPDATE tblcar SET status = 'Available' WHERE plate LIKE '" + _plate + "'", cn);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+
+                    MessageBox.Show("Record successfully Deleted from list!", "Delete Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadCart();
+                    AutoSuggestCar();
+                }
+            }
+        }
+
+        public void LoadCart()
+        {
+            try
+            {
+                int i = 0;
+                double tot = 0;
+                dgvRent.Rows.Clear();
+                cn.Open();
+                cm = new MySqlCommand("SELECT * FROM tblrent WHERE transno LIKE '" + txtTransNo.Text + "'", cn);
+                dr = cm.ExecuteReader();
+                while (dr.Read())
+                {
+                    dgvRent.Rows.Add(dr["id"].ToString(), dr["plateno"].ToString(), Convert.ToDecimal(dr["rentalpay"].ToString()).ToString("#,##0.00"), Convert.ToDateTime(dr["dborrowed"].ToString()).ToShortDateString(), Convert.ToDateTime(dr["dreturned"].ToString()).ToShortDateString());
+                    tot += Convert.ToDouble(dr["rentalpay"].ToString());
+                    i += 1;
+                }
+                dr.Close();
+                cn.Close();
+                lblTotal.Text = (tot/*, "#,##0.00"*/).ToString();
+                dgvRent.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                cn.Close();
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        //this is important when you delete rented car, give status back to available
+        private void dgvRent_SelectionChanged(object sender, EventArgs e)
+        {
+            int i = dgvRent.CurrentRow.Index;
+            _id = dgvRent[0, i].Value.ToString();
+            _plate = dgvRent[1, i].Value.ToString();
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            frmPay frm = new frmPay();
+            frm.lblTransNo.Text = txtTransNo.Text;
+            frm.lblName.Text = txtCustomer.Text;
+            frm.lblTotal.Text = lblTotal.Text;
+            frm.Show();
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (dgvRent.Rows.Count > 0)
+            {
+                MessageBox.Show("Please settle payment!");
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
 

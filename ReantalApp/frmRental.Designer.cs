@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRental));
             this.dgvRent = new System.Windows.Forms.DataGridView();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,8 +40,6 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.Panel3 = new System.Windows.Forms.Panel();
-            this.lblCount = new System.Windows.Forms.Label();
-            this.Label9 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnPay = new System.Windows.Forms.Button();
             this.btnRent = new System.Windows.Forms.Button();
@@ -89,14 +87,14 @@
             this.dgvRent.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvRent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvRent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(166)))), ((int)(((byte)(179)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(166)))), ((int)(((byte)(179)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(166)))), ((int)(((byte)(179)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(166)))), ((int)(((byte)(179)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRent.ColumnHeadersHeight = 30;
             this.dgvRent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -106,28 +104,32 @@
             this.Column9,
             this.Column10,
             this.colDelete});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRent.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRent.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRent.EnableHeadersVisualStyles = false;
             this.dgvRent.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.dgvRent.Location = new System.Drawing.Point(9, 323);
             this.dgvRent.Name = "dgvRent";
+            this.dgvRent.ReadOnly = true;
             this.dgvRent.RowHeadersVisible = false;
             this.dgvRent.RowTemplate.Height = 24;
             this.dgvRent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRent.Size = new System.Drawing.Size(1106, 220);
             this.dgvRent.TabIndex = 27;
+            this.dgvRent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRent_CellContentClick);
+            this.dgvRent.SelectionChanged += new System.EventHandler(this.dgvRent_SelectionChanged);
             // 
             // Column7
             // 
             this.Column7.HeaderText = "ID";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             this.Column7.Visible = false;
             // 
             // DataGridViewTextBoxColumn1
@@ -135,14 +137,16 @@
             this.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DataGridViewTextBoxColumn1.HeaderText = "PLATE NO";
             this.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1";
+            this.DataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // Column8
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column8.HeaderText = "TOTAL AMOUNT";
             this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             this.Column8.Width = 134;
             // 
             // Column9
@@ -150,6 +154,7 @@
             this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column9.HeaderText = "DATE BORROWED";
             this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             this.Column9.Width = 144;
             // 
             // Column10
@@ -157,6 +162,7 @@
             this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column10.HeaderText = "DATE RETURN";
             this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
             this.Column10.Width = 118;
             // 
             // colDelete
@@ -165,13 +171,12 @@
             this.colDelete.HeaderText = "";
             this.colDelete.Image = ((System.Drawing.Image)(resources.GetObject("colDelete.Image")));
             this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
             this.colDelete.Width = 5;
             // 
             // Panel3
             // 
             this.Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Panel3.Controls.Add(this.lblCount);
-            this.Panel3.Controls.Add(this.Label9);
             this.Panel3.Controls.Add(this.lblTotal);
             this.Panel3.ForeColor = System.Drawing.Color.White;
             this.Panel3.Location = new System.Drawing.Point(8, 550);
@@ -180,33 +185,11 @@
             this.Panel3.Size = new System.Drawing.Size(1107, 42);
             this.Panel3.TabIndex = 25;
             // 
-            // lblCount
-            // 
-            this.lblCount.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblCount.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount.Location = new System.Drawing.Point(88, 0);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(140, 42);
-            this.lblCount.TabIndex = 26;
-            this.lblCount.Text = "0";
-            this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Label9
-            // 
-            this.Label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Label9.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label9.Location = new System.Drawing.Point(0, 0);
-            this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(88, 42);
-            this.Label9.TabIndex = 25;
-            this.Label9.Text = "TOTAL UNIT : ";
-            this.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lblTotal
             // 
-            this.lblTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblTotal.BackColor = System.Drawing.Color.IndianRed;
             this.lblTotal.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.White;
             this.lblTotal.Location = new System.Drawing.Point(765, 0);
             this.lblTotal.Name = "lblTotal";
@@ -230,6 +213,7 @@
             this.btnPay.TabIndex = 26;
             this.btnPay.Text = "Pay Rental";
             this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnRent
             // 
@@ -246,6 +230,7 @@
             this.btnRent.TabIndex = 18;
             this.btnRent.Text = "Rent Car";
             this.btnRent.UseVisualStyleBackColor = false;
+            this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
             // 
             // lblDay
             // 
@@ -639,15 +624,7 @@
 
         #endregion
         internal System.Windows.Forms.DataGridView dgvRent;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn1;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        internal System.Windows.Forms.DataGridViewImageColumn colDelete;
         internal System.Windows.Forms.Panel Panel3;
-        internal System.Windows.Forms.Label lblCount;
-        internal System.Windows.Forms.Label Label9;
         internal System.Windows.Forms.Label lblTotal;
         internal System.Windows.Forms.Button btnPay;
         internal System.Windows.Forms.Button btnRent;
@@ -681,5 +658,11 @@
         public System.Windows.Forms.TextBox txtRate;
         public System.Windows.Forms.TextBox txtCustomer;
         public System.Windows.Forms.Label lblDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewImageColumn colDelete;
     }
 }

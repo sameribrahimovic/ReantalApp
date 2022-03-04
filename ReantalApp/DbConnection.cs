@@ -12,8 +12,8 @@ namespace ReantalApp
     {
         MySqlConnection cn = new MySqlConnection();
         MySqlCommand cm = new MySqlCommand();
-        MySqlDataReader dr;
-        private string con;
+        //MySqlDataReader dr;
+        //private string con;
 
         public string MyConnection()
         {

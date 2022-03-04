@@ -15,7 +15,6 @@ namespace ReantalApp
     {
         MySqlConnection cn = new MySqlConnection();
         MySqlCommand cm = new MySqlCommand();
-        MySqlDataReader dr;
         DbConnection dbcon = new DbConnection();
         frmClientList frmclist;
         public frmAddClient(frmClientList flist)

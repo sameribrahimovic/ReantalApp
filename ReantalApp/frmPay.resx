@@ -117,68 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column10.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colDelete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="colDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IgAALiIBquLdkgAAA7hJREFUOE91VN9v21QUdlrxMPHIyySExMOmPbA3tDceKULizwBS2jhOsnZJbCe2
-        00AroTWdRpd06irEGFsENJ1/pSwt2iaBeFqzxI7r2I4DpHuhK3QaP6TG19653gZUlIdrHx/f8+n7vnPu
-        JXhBIHieD9+cUBjhhJlRji+M5otzL0x9tsklxO4flGg+Tqzpj1LX7sTyM8URjhdG8T6oiTyvJYQQSCAE
-        nMizBJfLETyTJti5hZdI9Ucr+VXzh9T17z+lVvV7cbm3xc6VjvFMJtwn5GHhegyEHyEIgNGl5VezF6+e
-        oRdWTqeXvn4n9s2Dv6ZW6iTz8eKLqS++Y0n159/PXV4dy15YOZ25+PnrzPnKy5iRALUgBwKOI/KFYoRa
-        66yS9Z+2SaXfjiuuQUndPiW7Zlzptyi516Ukq0/KrgH/W7H1Byb1ZfMqVygSIDXy1COOJzgAO7csnqHW
-        DDa52sqmaloWfMkkaxqdqrXZZE2nYWVwHv4zVK2TSV+68RoPdc88AhBA5HMskVm89ga5PtiN3bR+GRfd
-        3bjs7MVk5+G42HsIMV57EO+Scm8P/HJB8it8jsH12KNnQGBctlx9e6I+8GnV9D+53Q0mRSeYVq3g0m0z
-        SMh2QMFahHxatYOY7D5m5pdO4TpgFAFGmBq0HRJ0ufrmu8rgYGHDONB1bTgh2t6HDQuZetubVix0Vra8
-        jq55s40uiorub7n5yglcd1gaJJjyjbH31MFwfnN7eK/d8SYlB83csvxmW0fTqu2fVWwEefRRw/JB+j47
-        XznJc38zwgNVGMFAdKUKQDteaXPbw8UxyfGLDStoaboPQMGUYvtNrePPbljBB1L/Ua60dJLP5/8LxJSr
-        Y++rO8PSt8awqenAqIeKDdtvax00XXd8AEIAhGYbdjAu9fdB2tGMmEOMQJrcQzMA1MJAKgCpFrqvGWh2
-        A4Bkdz9kdCQQeBQyAo+2sDQRpN0Cae1/pN1vd3zw6Lm0Ezx3WFok7FrIaBAyAiCQZgMjC4qx2RYwstEW
-        Nhs8wtKw2cL/MIL27wwvbBpDA9oM7UfQft/UNQTth65ZyNB1kGYFUelIaUIEn2QagGAgD3Jq92D5jjmc
-        hDlKq5a3ctf0krLtJSTbu3LXHGbrNpqQ+7/+q/14jsKBjAhwLWTK1bfi64MAjkgQhamGIxHACATRm70g
-        Ltnhd1TsBSTElOL+SZ+vnBI49hCj8G7JLl4/TqqDbEKy2ITsMHAk2ITiMEnFhthh4RvHNLxzccWh4Bo5
-        9tQjgXgCHnL5YS0upF0AAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="txtTransNo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtName.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtContact.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtPlate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtTotal.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtDetails.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtRate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
