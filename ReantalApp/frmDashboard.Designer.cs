@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
-            this.pnlBottom = new System.Windows.Forms.Panel();
-            this.pnlLeftTop = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.btnUser = new System.Windows.Forms.Button();
             this.btnBrand = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
@@ -42,8 +39,11 @@
             this.btnClient = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnRental = new System.Windows.Forms.Button();
+            this.pnlBottom = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.pnlLeftTop = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.pnlLeft.SuspendLayout();
             this.pnlLeftMenu.SuspendLayout();
             this.pnlBottom.SuspendLayout();
@@ -78,32 +78,6 @@
             this.pnlLeftMenu.Name = "pnlLeftMenu";
             this.pnlLeftMenu.Size = new System.Drawing.Size(200, 484);
             this.pnlLeftMenu.TabIndex = 2;
-            // 
-            // pnlBottom
-            // 
-            this.pnlBottom.Controls.Add(this.btnLogout);
-            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 670);
-            this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(200, 33);
-            this.pnlBottom.TabIndex = 1;
-            // 
-            // pnlLeftTop
-            // 
-            this.pnlLeftTop.Controls.Add(this.pictureBox1);
-            this.pnlLeftTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLeftTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlLeftTop.Name = "pnlLeftTop";
-            this.pnlLeftTop.Size = new System.Drawing.Size(200, 186);
-            this.pnlLeftTop.TabIndex = 0;
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(200, 0);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1252, 703);
-            this.mainPanel.TabIndex = 1;
             // 
             // btnUser
             // 
@@ -254,6 +228,7 @@
             this.btnReturn.Text = "    RETURN";
             this.btnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnRental
             // 
@@ -277,6 +252,15 @@
             this.btnRental.UseVisualStyleBackColor = false;
             this.btnRental.Click += new System.EventHandler(this.btnRental_Click);
             // 
+            // pnlBottom
+            // 
+            this.pnlBottom.Controls.Add(this.btnLogout);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 670);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(200, 33);
+            this.pnlBottom.TabIndex = 1;
+            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
@@ -298,6 +282,15 @@
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = false;
             // 
+            // pnlLeftTop
+            // 
+            this.pnlLeftTop.Controls.Add(this.pictureBox1);
+            this.pnlLeftTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLeftTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeftTop.Name = "pnlLeftTop";
+            this.pnlLeftTop.Size = new System.Drawing.Size(200, 186);
+            this.pnlLeftTop.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -310,6 +303,14 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(200, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1252, 703);
+            this.mainPanel.TabIndex = 1;
             // 
             // frmDashboard
             // 

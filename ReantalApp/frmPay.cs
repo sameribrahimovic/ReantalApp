@@ -17,10 +17,11 @@ namespace ReantalApp
         MySqlConnection cn = new MySqlConnection();
         MySqlCommand cm = new MySqlCommand();
         DbConnection dbcon = new DbConnection();
-        frmRental frm = new frmRental();
-        public frmPay()
+        frmRental frm;
+        public frmPay(frmRental fr)
         {
             InitializeComponent();
+            frm = fr;
             cn = new MySqlConnection(dbcon.MyConnection());
         }
 
@@ -66,15 +67,19 @@ namespace ReantalApp
                 cm = new MySqlCommand("INSERT INTO tblpayment(transno, name, cash, sdate) VALUES('" + lblTransNo.Text + "','" + lblName.Text + "','" + Convert.ToDouble(txtCash.Text) + "','" + sdate + "')", cn);
                 cm.ExecuteNonQuery();
                 cn.Close();
-                Interaction.MsgBox("Payment successfully Completed!");
-                this.txtCash.Text = "0";
-                this.lblTotal.Text = "0";
-                this.Dispose();
-                frm.LoadAutoNo();
-                frm.txtCustomer.Clear();
-                frm.txtPlateNo.Clear();
-                frm.LoadCart();
+                MessageBox.Show("Payment successfully Completed!");
+                txtCash.Text = "0";
+                lblTotal.Text = "0";
+
                 frm.Reset();
+                frm.dgvRent.Rows.Clear();
+                frm.LoadAutoNo();
+                frm.txtCustomer.Focus();
+                frm.lblTotal.Text = "0.00";
+                frm.LoadCart();
+                frm.GroupBox1.Enabled = true;
+                frm.GroupBox2.Enabled = true;
+                this.Dispose();
             }
         }
     }

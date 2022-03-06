@@ -52,5 +52,14 @@ namespace ReantalApp
             frm.BringToFront();
             frm.Show();
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            frmReturn frm = new frmReturn();
+            frm.TopLevel = false;
+            mainPanel.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }

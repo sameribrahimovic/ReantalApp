@@ -105,11 +105,12 @@ namespace ReantalApp
                     col.Add(data.Rows[i]["fullname"].ToString());
                 }
                 cn.Close();
+                
                 txtCustomer.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 txtCustomer.AutoCompleteCustomSource = col;
                 txtCustomer.AutoCompleteMode = AutoCompleteMode.Suggest;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 cn.Close();
             }
@@ -144,6 +145,9 @@ namespace ReantalApp
         {
             AutoSuggestClient();
             AutoSuggestCar();
+            txtCustomer.Focus();
+            //btnRent.Enabled = false;
+            btnPay.Enabled = false;
             //LoadCart();
         }
 
@@ -231,12 +235,11 @@ namespace ReantalApp
                         cm = new MySqlCommand("UPDATE tblcar SET status ='Borrowed' WHERE plate LIKE '" + txtPlate.Text + "'", cn);
                         cm.ExecuteNonQuery();
                         cn.Close();
-
-                        txtPlateNo.Clear();
-                        txtDetails.Clear();
-                        txtRate.Text = "0.00";
-                        dtReturn.Value = DateTime.Now;
                         AutoSuggestCar();
+                        btnPay.Enabled = true;
+                        btnRent.Enabled = false;
+                        GroupBox1.Enabled = false;
+                        GroupBox2.Enabled = false;
                     }
             }
             catch (Exception)
@@ -265,6 +268,9 @@ namespace ReantalApp
                     cn.Close();
 
                     MessageBox.Show("Record successfully Deleted from list!", "Delete Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GroupBox1.Enabled = true;
+                    GroupBox2.Enabled = true;
+                    txtCustomer.Focus();
                     LoadCart();
                     AutoSuggestCar();
                 }
@@ -289,7 +295,8 @@ namespace ReantalApp
                 }
                 dr.Close();
                 cn.Close();
-                lblTotal.Text = (tot/*, "#,##0.00"*/).ToString();
+                //lblTotal.Text = (tot/*, "#,##0.00"*/).ToString();
+                lblTotal.Text = Strings.Format(tot, "#,##0.00");
                 dgvRent.ClearSelection();
             }
             catch (Exception ex)
@@ -306,15 +313,19 @@ namespace ReantalApp
             int i = dgvRent.CurrentRow.Index;
             _id = dgvRent[0, i].Value.ToString();
             _plate = dgvRent[1, i].Value.ToString();
+            btnRent.Enabled = true;
+            //AutoSuggestCar();
+            //AutoSuggestClient();
+
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            frmPay frm = new frmPay();
+            frmPay frm = new frmPay(this);
             frm.lblTransNo.Text = txtTransNo.Text;
             frm.lblName.Text = txtCustomer.Text;
             frm.lblTotal.Text = lblTotal.Text;
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
