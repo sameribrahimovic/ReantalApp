@@ -61,5 +61,19 @@ namespace ReantalApp
             frm.BringToFront();
             frm.Show();
         }
+
+        private void btnIncome_Click(object sender, EventArgs e)
+        {
+            frmIncome frm = new frmIncome();
+            frm.TopLevel = false;
+            mainPanel.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

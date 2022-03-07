@@ -21,6 +21,80 @@ namespace ReantalApp
         DbConnection dbcon = new DbConnection();
         string _id, _cid, _transaction, _fullname, _plateno, _ddue, _rent;
 
+        private void txtCash_TextChanged(object sender, EventArgs e)
+        {
+            GetChange();
+        }
+
+        private void GetChange()
+        {
+            if (Convert.ToDouble(txtCash.Text) >= Convert.ToDouble(lblTotal.Text))
+            {
+                lblChange.Text = Strings.Format((object)(Convert.ToDouble(txtCash.Text) - Convert.ToDouble(lblTotal.Text)), "#,##0.00");
+            }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtCash.Text == String.Empty)
+                {
+                    return;
+                }
+                if (Convert.ToDouble(lblDue.Text) > 0 || Convert.ToDouble(txtCash.Text) < Convert.ToDouble(lblTotal.Text))
+                    {
+                        MessageBox.Show("Insuffecient cash.");
+                    }
+               
+                else if (MessageBox.Show("Return this Car?", "Return information", MessageBoxButtons.YesNo,
+                                            MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string sdate = DateTime.Now.Date.ToString("yyyy-MM-dd");
+                    cn.Open();
+                    cm = new MySqlCommand("INSERT INTO tblpayment(transno, name, cash, sdate) values('" + lblTransNo.Text + "','" + lblCustomer.Text + "','" + Convert.ToDouble(txtCash.Text) + "','" + sdate + "')", cn);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    cn.Open();
+                    cm = new MySqlCommand("UPDATE tblrent SET status = 'Returned' WHERE id LIKE '" + _id + "'", cn);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    cn.Open();
+                    cm = new MySqlCommand("UPDATE tblcar SET status = 'Available' WHERE plate LIKE '" + lblPlate.Text + "'", cn);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    MessageBox.Show("Successfully returned!");
+                    lblCustomer.Text = "";
+                    lblPlate.Text = "";
+                    lblTransNo.Text = "";
+                    lblDateReturn.Text = DateTime.Now.ToString("MMM-dd-yyyy");
+                    lblDue.Text = "0";
+                    lblRent.Text = "0.00";
+                    lblTotal.Text = "0.00";
+                    LoadRental();
+                }
+            }
+            catch (Exception ex)
+            {
+                cn.Close();
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void lblDue_TextChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToDouble(lblDue.Text) > 0)
+            {
+                txtCash.Enabled = true;
+                txtCash.Text = "0.00";
+            }
+            else
+            {
+                txtCash.Text = "0.00";
+                txtCash.Enabled = false;
+            }
+        }
+
         private void dgvReturn_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -43,6 +117,7 @@ namespace ReantalApp
                     lblTransNo.Text = _transaction;
                     lblRent.Text = _rent;
                     lblTotal.Text = (Convert.ToDouble(lblRent.Text) * Convert.ToDouble(lblDue.Text)).ToString();
+                    //txtCash.Text =
                 }
             }
             catch (Exception ex)

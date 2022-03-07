@@ -31,10 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
-            this.btnUser = new System.Windows.Forms.Button();
             this.btnBrand = new System.Windows.Forms.Button();
-            this.btnLog = new System.Windows.Forms.Button();
-            this.btnIncome = new System.Windows.Forms.Button();
             this.btnCar = new System.Windows.Forms.Button();
             this.btnClient = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
@@ -44,6 +41,7 @@
             this.pnlLeftTop = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.btnIncome = new System.Windows.Forms.Button();
             this.pnlLeft.SuspendLayout();
             this.pnlLeftMenu.SuspendLayout();
             this.pnlBottom.SuspendLayout();
@@ -65,10 +63,8 @@
             // 
             // pnlLeftMenu
             // 
-            this.pnlLeftMenu.Controls.Add(this.btnUser);
-            this.pnlLeftMenu.Controls.Add(this.btnBrand);
-            this.pnlLeftMenu.Controls.Add(this.btnLog);
             this.pnlLeftMenu.Controls.Add(this.btnIncome);
+            this.pnlLeftMenu.Controls.Add(this.btnBrand);
             this.pnlLeftMenu.Controls.Add(this.btnCar);
             this.pnlLeftMenu.Controls.Add(this.btnClient);
             this.pnlLeftMenu.Controls.Add(this.btnReturn);
@@ -78,27 +74,6 @@
             this.pnlLeftMenu.Name = "pnlLeftMenu";
             this.pnlLeftMenu.Size = new System.Drawing.Size(200, 484);
             this.pnlLeftMenu.TabIndex = 2;
-            // 
-            // btnUser
-            // 
-            this.btnUser.BackColor = System.Drawing.Color.Transparent;
-            this.btnUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUser.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUser.FlatAppearance.BorderSize = 0;
-            this.btnUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUser.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUser.ForeColor = System.Drawing.Color.Black;
-            this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
-            this.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUser.Location = new System.Drawing.Point(0, 280);
-            this.btnUser.Name = "btnUser";
-            this.btnUser.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnUser.Size = new System.Drawing.Size(200, 40);
-            this.btnUser.TabIndex = 28;
-            this.btnUser.Text = "    USER";
-            this.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUser.UseVisualStyleBackColor = false;
             // 
             // btnBrand
             // 
@@ -112,7 +87,7 @@
             this.btnBrand.ForeColor = System.Drawing.Color.Black;
             this.btnBrand.Image = ((System.Drawing.Image)(resources.GetObject("btnBrand.Image")));
             this.btnBrand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBrand.Location = new System.Drawing.Point(0, 240);
+            this.btnBrand.Location = new System.Drawing.Point(0, 160);
             this.btnBrand.Name = "btnBrand";
             this.btnBrand.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnBrand.Size = new System.Drawing.Size(200, 40);
@@ -121,48 +96,6 @@
             this.btnBrand.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBrand.UseVisualStyleBackColor = false;
             this.btnBrand.Click += new System.EventHandler(this.btnBrand_Click);
-            // 
-            // btnLog
-            // 
-            this.btnLog.BackColor = System.Drawing.Color.Transparent;
-            this.btnLog.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLog.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLog.FlatAppearance.BorderSize = 0;
-            this.btnLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLog.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLog.ForeColor = System.Drawing.Color.Black;
-            this.btnLog.Image = ((System.Drawing.Image)(resources.GetObject("btnLog.Image")));
-            this.btnLog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLog.Location = new System.Drawing.Point(0, 200);
-            this.btnLog.Name = "btnLog";
-            this.btnLog.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnLog.Size = new System.Drawing.Size(200, 40);
-            this.btnLog.TabIndex = 26;
-            this.btnLog.Text = "    TRANSACTION LOG";
-            this.btnLog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLog.UseVisualStyleBackColor = false;
-            // 
-            // btnIncome
-            // 
-            this.btnIncome.BackColor = System.Drawing.Color.Transparent;
-            this.btnIncome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIncome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnIncome.FlatAppearance.BorderSize = 0;
-            this.btnIncome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnIncome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncome.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncome.ForeColor = System.Drawing.Color.Black;
-            this.btnIncome.Image = ((System.Drawing.Image)(resources.GetObject("btnIncome.Image")));
-            this.btnIncome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIncome.Location = new System.Drawing.Point(0, 160);
-            this.btnIncome.Name = "btnIncome";
-            this.btnIncome.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnIncome.Size = new System.Drawing.Size(200, 40);
-            this.btnIncome.TabIndex = 25;
-            this.btnIncome.Text = "    INCOME";
-            this.btnIncome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnIncome.UseVisualStyleBackColor = false;
             // 
             // btnCar
             // 
@@ -281,6 +214,7 @@
             this.btnLogout.Text = "    LOGOUT";
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // pnlLeftTop
             // 
@@ -312,6 +246,28 @@
             this.mainPanel.Size = new System.Drawing.Size(1252, 703);
             this.mainPanel.TabIndex = 1;
             // 
+            // btnIncome
+            // 
+            this.btnIncome.BackColor = System.Drawing.Color.Transparent;
+            this.btnIncome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIncome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnIncome.FlatAppearance.BorderSize = 0;
+            this.btnIncome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnIncome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncome.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncome.ForeColor = System.Drawing.Color.Black;
+            this.btnIncome.Image = ((System.Drawing.Image)(resources.GetObject("btnIncome.Image")));
+            this.btnIncome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIncome.Location = new System.Drawing.Point(0, 200);
+            this.btnIncome.Name = "btnIncome";
+            this.btnIncome.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnIncome.Size = new System.Drawing.Size(200, 40);
+            this.btnIncome.TabIndex = 28;
+            this.btnIncome.Text = "    INCOME";
+            this.btnIncome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnIncome.UseVisualStyleBackColor = false;
+            this.btnIncome.Click += new System.EventHandler(this.btnIncome_Click);
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,15 +295,13 @@
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Panel pnlLeftTop;
         private System.Windows.Forms.PictureBox pictureBox1;
-        internal System.Windows.Forms.Button btnUser;
         internal System.Windows.Forms.Button btnBrand;
-        internal System.Windows.Forms.Button btnLog;
-        internal System.Windows.Forms.Button btnIncome;
         internal System.Windows.Forms.Button btnCar;
         internal System.Windows.Forms.Button btnClient;
         internal System.Windows.Forms.Button btnReturn;
         internal System.Windows.Forms.Button btnRental;
         internal System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel mainPanel;
+        public System.Windows.Forms.Button btnIncome;
     }
 }

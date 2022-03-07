@@ -80,12 +80,14 @@
             this.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.DataGridViewTextBoxColumn1.HeaderText = "TRANSACTION NO";
             this.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1";
+            this.DataGridViewTextBoxColumn1.ReadOnly = true;
             this.DataGridViewTextBoxColumn1.Width = 134;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "CID";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
             // btnReturn
@@ -100,6 +102,7 @@
             this.btnReturn.TabIndex = 23;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // lblTransNo
             // 
@@ -114,12 +117,14 @@
             // 
             this.txtCash.BackColor = System.Drawing.Color.IndianRed;
             this.txtCash.Enabled = false;
-            this.txtCash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtCash.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCash.ForeColor = System.Drawing.Color.Black;
             this.txtCash.Location = new System.Drawing.Point(854, 55);
             this.txtCash.Name = "txtCash";
             this.txtCash.Size = new System.Drawing.Size(236, 23);
             this.txtCash.TabIndex = 22;
             this.txtCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCash.TextChanged += new System.EventHandler(this.txtCash_TextChanged);
             // 
             // Label2
             // 
@@ -190,12 +195,14 @@
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column2.HeaderText = "NAME";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column3.HeaderText = "PLATE";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Width = 65;
             // 
             // Column9
@@ -203,6 +210,7 @@
             this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column9.HeaderText = "DATE BORROWED";
             this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             this.Column9.Width = 134;
             // 
             // Label6
@@ -262,6 +270,7 @@
             // 
             this.Column7.HeaderText = "ID";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             this.Column7.Visible = false;
             // 
             // Column10
@@ -269,6 +278,7 @@
             this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column10.HeaderText = "DATE RETURN";
             this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
             this.Column10.Width = 112;
             // 
             // Column8
@@ -278,6 +288,7 @@
             this.Column8.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column8.HeaderText = "TOTAL AMOUNT";
             this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             this.Column8.Width = 124;
             // 
             // lblPlate
@@ -366,6 +377,7 @@
             this.lblDue.Size = new System.Drawing.Size(100, 21);
             this.lblDue.TabIndex = 13;
             this.lblDue.Text = "0";
+            this.lblDue.TextChanged += new System.EventHandler(this.lblDue_TextChanged);
             // 
             // Label8
             // 
@@ -395,6 +407,7 @@
             this.colSelect.HeaderText = "";
             this.colSelect.Image = ((System.Drawing.Image)(resources.GetObject("colSelect.Image")));
             this.colSelect.Name = "colSelect";
+            this.colSelect.ReadOnly = true;
             this.colSelect.Width = 5;
             // 
             // GroupBox1
@@ -432,6 +445,7 @@
             // dgvReturn
             // 
             this.dgvReturn.AllowUserToAddRows = false;
+            this.dgvReturn.AllowUserToDeleteRows = false;
             this.dgvReturn.BackgroundColor = System.Drawing.Color.White;
             this.dgvReturn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvReturn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -467,6 +481,7 @@
             this.dgvReturn.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.dgvReturn.Location = new System.Drawing.Point(7, 77);
             this.dgvReturn.Name = "dgvReturn";
+            this.dgvReturn.ReadOnly = true;
             this.dgvReturn.RowHeadersVisible = false;
             this.dgvReturn.RowTemplate.Height = 24;
             this.dgvReturn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
