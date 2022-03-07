@@ -75,5 +75,14 @@ namespace ReantalApp
         {
             this.Close();
         }
+
+        private void btnLogs_Click(object sender, EventArgs e)
+        {
+            frmLogs frm = new frmLogs();
+            frm.TopLevel = false;
+            mainPanel.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }
