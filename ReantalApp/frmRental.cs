@@ -236,10 +236,14 @@ namespace ReantalApp
                         cm.ExecuteNonQuery();
                         cn.Close();
                         AutoSuggestCar();
+                        txtPlateNo.Clear();
+                        txtPlate.Clear();
+                        txtDetails.Clear();
+                        txtRate.Clear();
+                        dtReturn.Value = DateTime.Now;
+                        txtTotal.Clear();
                         btnPay.Enabled = true;
-                        btnRent.Enabled = false;
                         GroupBox1.Enabled = false;
-                        GroupBox2.Enabled = false;
                     }
             }
             catch (Exception)
@@ -269,7 +273,6 @@ namespace ReantalApp
 
                     MessageBox.Show("Record successfully Deleted from list!", "Delete Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GroupBox1.Enabled = true;
-                    GroupBox2.Enabled = true;
                     txtCustomer.Focus();
                     LoadCart();
                     AutoSuggestCar();

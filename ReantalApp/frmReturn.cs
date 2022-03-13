@@ -28,9 +28,18 @@ namespace ReantalApp
 
         private void GetChange()
         {
-            if (Convert.ToDouble(txtCash.Text) >= Convert.ToDouble(lblTotal.Text))
+            try
             {
-                lblChange.Text = Strings.Format((object)(Convert.ToDouble(txtCash.Text) - Convert.ToDouble(lblTotal.Text)), "#,##0.00");
+                if (Convert.ToDouble(txtCash.Text) >= Convert.ToDouble(lblTotal.Text))
+                {
+                    lblChange.Text = Strings.Format((object)(Convert.ToDouble(txtCash.Text) - Convert.ToDouble(lblTotal.Text)), "#,##0.00");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                lblChange.Text = "0.00";
             }
         }
 
@@ -42,7 +51,7 @@ namespace ReantalApp
                 {
                     return;
                 }
-                if (Convert.ToDouble(lblDue.Text) > 0 || Convert.ToDouble(txtCash.Text) < Convert.ToDouble(lblTotal.Text))
+                if (/*Convert.ToDouble(lblDue.Text) > 0 || */Convert.ToDouble(txtCash.Text) < Convert.ToDouble(lblTotal.Text))
                     {
                         MessageBox.Show("Insuffecient cash.");
                     }
@@ -117,7 +126,7 @@ namespace ReantalApp
                     lblTransNo.Text = _transaction;
                     lblRent.Text = _rent;
                     lblTotal.Text = (Convert.ToDouble(lblRent.Text) * Convert.ToDouble(lblDue.Text)).ToString();
-                    //txtCash.Text =
+                    
                 }
             }
             catch (Exception ex)

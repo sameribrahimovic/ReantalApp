@@ -592,7 +592,6 @@
         internal System.Windows.Forms.Label lblDateDue;
         internal System.Windows.Forms.Label Label13;
         internal System.Windows.Forms.Label lblDateReturn;
-        internal System.Windows.Forms.Label lblDue;
         internal System.Windows.Forms.Label Label8;
         internal System.Windows.Forms.Label Label5;
         internal System.Windows.Forms.DataGridViewImageColumn colSelect;
@@ -603,5 +602,6 @@
         public MetroFramework.Controls.MetroTextBox txtSearch;
         public System.Windows.Forms.DataGridView dgvReturn;
         public System.Windows.Forms.Panel Panel2;
+        public System.Windows.Forms.Label lblDue;
     }
 }

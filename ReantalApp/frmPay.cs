@@ -78,7 +78,6 @@ namespace ReantalApp
                 frm.lblTotal.Text = "0.00";
                 frm.LoadCart();
                 frm.GroupBox1.Enabled = true;
-                frm.GroupBox2.Enabled = true;
                 this.Dispose();
             }
         }
